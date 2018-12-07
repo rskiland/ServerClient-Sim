@@ -67,21 +67,27 @@ Server Methods:
 --- Client ---
 
 Client Constructor:
-	Client(String ServerAddress, int ServerPort, String clientName)							-- main constructor
-	Client(String ServerAddress, int ServerPort, String clientName, boolean allowTextLogs)				-- main constructor, system output place in "/logs/clientName-log.txt"
-	Client(String ServerAddress, int ServerPort, String clientName, int accessNumber)				-- testing constructor
-	Client(String ServerAddress, int ServerPort, String clientName, int accessNumber, boolean allowTextLogs)	-- testing constructor, system output place in "/logs/clientName-log.txt"
+	Client(String ServerAddress, int ServerPort, String clientName)							
+	    -- main constructor
+	Client(String ServerAddress, int ServerPort, String clientName, boolean allowTextLogs)				
+	    -- main constructor, system output place in "/logs/clientName-log.txt"
+	Client(String ServerAddress, int ServerPort, String clientName, int accessNumber)				
+	    -- testing constructor
+	Client(String ServerAddress, int ServerPort, String clientName, int accessNumber, boolean allowTextLogs)	
+	    -- testing constructor, system output place in "/logs/clientName-log.txt"
 		- ServerAddress: the address the client is connecting to
 		- ServerPort: the port that the server is bound to
 		- clientName: the name of the client to the server
 		- allowTextLogs: toggle client text logs
 			- if true, all system output placed in "/logs/clientName-log.txt"
 			- if false, all system output is in the console
-		- accessNumber: the amount of access the client has on the server, randomized value (50-300) but can be set for testing purposes
+		- accessNumber: the amount of access the client has on the server, randomized value (50-300) 
+		   but can be set for testing purposes
 			- farthest right digit = 1,3,5,7,9 (odd number): gold access level (5 requests)
 			- farthest right digit = 2,4,6,8 (even number): silver access level (3 requests)
 			- farthest right digit = 0: platinum access level (infinite requests)
-				- Platinum access can request all clients requests (by sending a request to the server with "http://clientsusage.com")
+				- Platinum access can request all clients requests 
+				   (by sending a request to the server with "http://clientsusage.com")
 
 Client Methods:
 	boolean Client.Connect()
